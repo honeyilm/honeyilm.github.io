@@ -13,7 +13,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #fffaf5;
+      background: linear-gradient(to bottom, #fffaf5, #fdf2e6);
       color: #333;
       overflow-x: hidden;
     }
@@ -34,8 +34,10 @@
     header .logo {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
-      color: #bfa054;
-      letter-spacing: 1px;
+      background: linear-gradient(45deg, #bfa054, #ffd86b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
       animation: fadeInDown 1s ease forwards;
     }
 
@@ -53,12 +55,16 @@
     }
     .hero h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 6rem;
-      color: #bfa054;
+      font-size: 7rem;
+      background: linear-gradient(45deg, #bfa054, #ffd86b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
       animation: fadeInDown 1s ease forwards;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .hero p.quote {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: #6b5a45;
       font-style: italic;
       margin: 20px 0 40px;
@@ -75,24 +81,24 @@
     }
     .hero .btn {
       display: inline-block;
-      background: #bfa054;
+      background: linear-gradient(45deg, #bfa054, #ffd86b);
       color: #fff;
-      padding: 16px 45px;
-      border-radius: 30px;
-      font-weight: 500;
-      font-size: 1.1rem;
+      padding: 18px 50px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       opacity: 0;
       animation: fadeIn 2s forwards;
       animation-delay: 2s;
+      box-shadow: 0 6px 20px rgba(191,160,84,0.3);
     }
     .hero .btn:hover {
-      background: #a88b3a;
-      transform: translateY(-3px);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(191,160,84,0.4);
     }
 
-    /* Login Link */
     .login-link {
       margin-top: 20px;
       font-size: 1rem;
@@ -105,19 +111,29 @@
       text-decoration: underline;
     }
 
-    /* Animated Flowers */
-    .flower {
+    /* Floating Decorative Elements */
+    .particle, .flower {
       position: absolute;
-      width: 50px;
-      height: 50px;
-      background: url('https://i.ibb.co/sVdMhnR/flower.png') no-repeat center/contain;
-      opacity: 0;
-      animation: pop 4s infinite;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffd86b 0%, #bfa054 100%);
+      opacity: 0.8;
+      animation: floatUp 10s infinite linear;
     }
-    @keyframes pop {
-      0% { transform: scale(0) rotate(0deg); opacity: 0; }
-      50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
-      100% { transform: scale(1) rotate(0deg); opacity: 0; }
+    .flower {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, #ffd86b 0%, #bfa054 60%);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(191,160,84,0.6);
+      animation: floatUp 12s infinite ease-in-out;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
     }
 
     /* Animations */
@@ -133,8 +149,8 @@
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 4rem; }
-      .hero p.quote { font-size: 1.2rem; }
-      .hero .btn { padding: 14px 35px; font-size: 1rem; }
+      .hero p.quote { font-size: 1.3rem; }
+      .hero .btn { padding: 14px 40px; font-size: 1rem; }
     }
   </style>
 </head>
@@ -152,12 +168,18 @@
     <a href="#" class="btn">Sign Up</a>
     <a href="#" class="login-link">Already a member? Log in</a>
 
-    <!-- Flowers -->
-    <div class="flower" style="top:10%; left:5%; animation-delay:0s;"></div>
-    <div class="flower" style="top:30%; left:80%; animation-delay:1s;"></div>
-    <div class="flower" style="top:60%; left:20%; animation-delay:2s;"></div>
-    <div class="flower" style="top:75%; left:70%; animation-delay:3s;"></div>
-    <div class="flower" style="top:50%; left:50%; animation-delay:4s;"></div>
+    <!-- Floating flowers/particles -->
+    <div class="flower" style="left:5%; animation-delay:0s;"></div>
+    <div class="flower" style="left:25%; animation-delay:2s;"></div>
+    <div class="flower" style="left:50%; animation-delay:4s;"></div>
+    <div class="flower" style="left:75%; animation-delay:6s;"></div>
+    <div class="flower" style="left:90%; animation-delay:8s;"></div>
+
+    <!-- Small particles -->
+    <div class="particle" style="left:10%; animation-duration:12s; animation-delay:1s;"></div>
+    <div class="particle" style="left:35%; animation-duration:10s; animation-delay:3s;"></div>
+    <div class="particle" style="left:60%; animation-duration:15s; animation-delay:2s;"></div>
+    <div class="particle" style="left:80%; animation-duration:14s; animation-delay:4s;"></div>
   </section>
 
 </body>
