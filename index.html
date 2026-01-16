@@ -1,189 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Honeyilm</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Honeyilm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    /* Reset */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fffaf5;
-      color: #333;
-      overflow-x: hidden;
-    }
-    a { text-decoration: none; color: inherit; }
+<style>
+  /* Reset */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fffaf5;
+    color: #333;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; }
 
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: center;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    header .logo {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: #bfa054;
-      letter-spacing: 2px;
-      animation: fadeInDown 1s ease forwards;
-    }
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    justify-content: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 100;
+  }
+  header .logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #bfa054;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease forwards;
+  }
 
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding-top: 120px;
-      position: relative;
-      overflow: hidden;
-      background: #fffaf5;
-    }
-    .hero h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 6rem;
-      color: #bfa054;
-      margin-bottom: 20px;
-      animation: fadeInDown 1s ease forwards;
-    }
-    .hero p.quote {
-      font-size: 1.5rem;
-      color: #6b5a45;
-      font-style: italic;
-      margin: 20px 0 40px;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 1s;
-    }
-    .hero p.quote small {
-      display: block;
-      margin-top: 10px;
-      font-size: 1rem;
-      font-style: normal;
-      color: #8c7560;
-    }
-    .hero .btn {
-      display: inline-block;
-      background: #bfa054;
-      color: #fff;
-      padding: 18px 50px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 2s;
-      box-shadow: 0 6px 20px rgba(191,160,84,0.3);
-    }
-    .hero .btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 30px rgba(191,160,84,0.4);
-    }
-    .login-link {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: #bfa054;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      animation-delay: 2.5s;
-    }
-    .login-link:hover {
-      text-decoration: underline;
-    }
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 120px;
+  }
+  .hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    color: #bfa054;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease forwards;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .hero p.quote {
+    font-size: 1.5rem;
+    color: #6b5a45;
+    font-style: italic;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+  }
+  .hero p.quote small {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-style: normal;
+    color: #8c7560;
+  }
+  .hero .btn {
+    background: #bfa054;
+    color: #fff;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 2s;
+    box-shadow: 0 6px 20px rgba(191,160,84,0.3);
+  }
+  .hero .btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(191,160,84,0.4);
+  }
+  .login-link {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #bfa054;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 2.5s;
+  }
+  .login-link:hover {
+    text-decoration: underline;
+  }
 
-    /* CSS Flowers */
-    .flower {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      opacity: 0.9;
-      animation: floatFlower 12s infinite ease-in-out;
-    }
-    .flower div {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #bfa054;
-      border-radius: 50%;
-      transform-origin: center center;
-    }
-    .flower div:nth-child(1) { top: 0; left: 15px; }
-    .flower div:nth-child(2) { top: 15px; left: 0; }
-    .flower div:nth-child(3) { top: 15px; left: 30px; }
-    .flower div:nth-child(4) { top: 30px; left: 15px; }
-    .flower div:nth-child(5) { top: 15px; left: 15px; background: #ffd86b; }
+  /* Animations */
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
-    @keyframes floatFlower {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      25% { opacity: 1; }
-      50% { transform: translateY(50vh) rotate(180deg); opacity: 0.8; }
-      75% { opacity: 1; }
-      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-50px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 4rem; }
-      .hero p.quote { font-size: 1.3rem; }
-      .hero .btn { padding: 14px 40px; font-size: 1rem; }
-      .flower { width: 35px; height: 35px; }
-      .flower div { width: 12px; height: 12px; }
-    }
-  </style>
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 4rem; }
+    .hero p.quote { font-size: 1.3rem; }
+    .hero .btn { padding: 14px 40px; font-size: 1rem; }
+  }
+</style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">Honeyilm</div>
-  </header>
+<header>
+  <div class="logo">Honeyilm</div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Honeyilm</h1>
-    <p class="quote">"Knowledge precedes speech and action"<br><small>– Imam al-Bukhari (رحمه الله)</small></p>
-    <a href="#" class="btn">Sign Up</a>
-    <a href="#" class="login-link">Already a member? Log in</a>
-
-    <!-- Flowers -->
-    <div class="flower" style="left:10%; animation-delay:0s;">
-      <div></div><div></div><div></div><div></div><div></div>
-    </div>
-    <div class="flower" style="left:30%; animation-delay:2s;">
-      <div></div><div></div><div></div><div></div><div></div>
-    </div>
-    <div class="flower" style="left:60%; animation-delay:4s;">
-      <div></div><div></div><div></div><div></div><div></div>
-    </div>
-    <div class="flower" style="left:80%; animation-delay:6s;">
-      <div></div><div></div><div></div><div></div><div></div>
-    </div>
-  </section>
+<section class="hero">
+  <h1>Honeyilm</h1>
+  <p class="quote">"Knowledge precedes speech and action"<br><small>– Imam al-Bukhari (رحمه الله)</small></p>
+  <a href="#" class="btn">Sign Up</a>
+  <a href="#" class="login-link">Already a member? Log in</a>
+</section>
 
 </body>
 </html>
